@@ -1,15 +1,29 @@
-import Card
+import random
+from Card import Card
+from Player import suits
+from Player import ranks
+
 
 class Deck:
     """
-    Represents an instance of 52-card unique cards
+    Represents an instance of a 52-Card deck.
     """
 
     def __init__(self):
-        pass
+        self.deck = []
+        for s in suits:
+            for r in ranks:
+                self.deck.append(Card(s, r))
+
+    def __str__(self):
+        deck = ""
+        for card in self.deck:
+            deck += "\n" + card.__str__()
+        return deck
 
     def shuffle(self):
-        pass
+        random.shuffle(self.deck)
 
     def deal(self):
-        pass
+        return self.deck.pop()
+
