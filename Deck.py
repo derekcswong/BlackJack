@@ -1,7 +1,7 @@
 import random
 from Card import Card
-from Player import suits
-from Player import ranks
+from Main import suits
+from Main import ranks
 
 
 class Deck:
