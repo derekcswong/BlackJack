@@ -1,7 +1,7 @@
 import random
 from Card import Card
-from Main import suits
-from Main import ranks
+suits = ('Hearts', 'Diamonds', 'Spades', 'Clubs')
+ranks = ('Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace')
 
 
 class Deck:
