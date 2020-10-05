@@ -1,5 +1,5 @@
 class Chips:
-    def __init__(self, total=100):
+    def __init__(self, total):
         self.total = total
         self.bet = 0
 
@@ -7,7 +7,7 @@ class Chips:
         self.total += self.bet
 
     def lose_chips(self):
-        self.bet -= self.bet
+        self.total -= self.bet
 
     def take_bet(self, chips):
         while True:

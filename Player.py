@@ -3,8 +3,6 @@ class Player:
          Represents an instance of a BlackJack player.
     """
 
-    player_turn = True
-
     def __init__(self, name):
         self.name = name
 
@@ -14,32 +12,34 @@ class Player:
 
     def hit_or_stand(self, deck, hand):
         while True:
-            h_s = input("Hit or Stand? Enter 'h' or 's' ").lower()
+            h_s = input("\nHit or Stand? Enter 'h' or 's' ").lower()
             if h_s == "h":
                 self.hit(deck, hand)
+                break
             elif h_s == "s":
-                print(f'{self.name} stands.', "Dealer's turn.")
-                player_turn = False
+                print(f'\n{self.name} stands.', "Dealer's turn.")
+                break
             else:
                 print("Try Again.")
                 continue
             break
+        return h_s
 
-    def player_bust(self, player_hand, dealer_hand, chips):
-        print(f'{self.name} busts!')
+    def player_busts(self, player_hand, dealer_hand, chips):
+        print(f'\n{self.name} busts!')
         chips.lose_chips()
 
-    def dealer_bust(self, player_hand, dealer_hand, chips):
-        print("Dealer busts!")
+    def dealer_busts(self, player_hand, dealer_hand, chips):
+        print("\nDealer busts!")
         chips.win_chips()
 
-    def player_win(self, player_hand, dealer_hand, chips):
-        print(f'{self.name} wins!')
-        chips.win_bet()
+    def player_wins(self, player_hand, dealer_hand, chips):
+        print(f'\n{self.name} wins!')
+        chips.win_chips()
 
     def dealer_wins(self, player_hand, dealer_hand, chips):
-        print("Dealer wins!")
+        print("\nDealer wins!")
         chips.lose_chips()
 
     def tie(self, player_hand, dealer):
-        print(f'Dealer and {self.name} tie!')
+        print(f'\nDealer and {self.name} tie!')
